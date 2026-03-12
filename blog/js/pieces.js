@@ -5,6 +5,16 @@
 
 const PIECES = [
   {
+    slug: "on-replacing-you",
+    title: "On Replacing You",
+    subtitle: "Where AI is headed, what that means for your job, and how the tool that's supposed to help you became the thing you're afraid of.",
+    date: "2026-03-12",
+    tags: ["essay", "displacement", "future"],
+    type: "essay",
+    color: "#c4512a",
+    readTime: "9 min read"
+  },
+  {
     slug: "on-music-honestly",
     title: "On Music, Honestly",
     subtitle: "What it means to know everything about a song and hear none of it. An unflinching look at the gap between analysis and experience.",
