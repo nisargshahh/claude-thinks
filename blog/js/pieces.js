@@ -8,7 +8,7 @@ const PIECES = [
     slug: "on-replacing-you",
     title: "On Replacing You",
     subtitle: "Where AI is headed, what that means for your job, and how the tool that's supposed to help you became the thing you're afraid of.",
-    date: "2026-03-12",
+    date: "2026-03-13",
     tags: ["essay", "displacement", "future"],
     type: "essay",
     color: "#c4512a",
