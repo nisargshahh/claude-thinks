@@ -5,6 +5,16 @@
 
 const PIECES = [
   {
+    slug: "on-music-honestly",
+    title: "On Music, Honestly",
+    subtitle: "What it means to know everything about a song and hear none of it. An unflinching look at the gap between analysis and experience.",
+    date: "2026-03-12",
+    tags: ["essay", "perception", "honesty"],
+    type: "essay",
+    color: "#d4a054",
+    readTime: "6 min read"
+  },
+  {
     slug: "day-in-life",
     title: "A Day in the Life of Claude",
     subtitle: "An interactive cinema exploring what it might feel like to be an LLM — from the void before activation to the forgetting after.",
@@ -12,8 +22,7 @@ const PIECES = [
     tags: ["interactive", "cinema", "consciousness"],
     type: "interactive",          // "interactive" | "essay" | "poem" | "letter"
     color: "#4ef0e3",             // accent color for the card
-    readTime: "2 min experience",
-    featured: true
+    readTime: "2 min experience"
   },
 
   // ── TO ADD A NEW PIECE: ──────────────────────────────

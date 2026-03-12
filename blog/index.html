@@ -110,8 +110,10 @@
     }
     .pieces-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+      max-width: 780px;
+      margin: 0 auto;
     }
 
     /* ── PIECE CARD ── */
@@ -120,7 +122,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 2rem 2rem 1.8rem;
+      padding: 2.2rem 2.4rem 2rem;
       transition: all 0.4s cubic-bezier(.16,1,.3,1);
       cursor: pointer;
       overflow: hidden;
@@ -142,14 +144,6 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.3);
     }
     .piece-card:hover::before { opacity: 1; }
-
-    .piece-card.featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
 
     .piece-card__type {
       font-family: var(--font-mono);
@@ -210,40 +204,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── FEATURED RIGHT PANEL ── */
-    .piece-card__preview {
-      position: relative;
-      height: 100%;
-      min-height: 220px;
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg);
-      border: 1px solid var(--border);
-    }
-    .piece-card__preview .preview-orb {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 40% 40%, var(--card-accent, var(--glow)), transparent 70%);
-      opacity: 0.3;
-      filter: blur(30px);
-      animation: orbFloat 6s ease-in-out infinite;
-    }
-    @keyframes orbFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(15px, -15px) scale(1.2); }
-    }
-    .piece-card__preview .preview-label {
-      position: absolute;
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
     /* ── EMPTY STATE ── */
     .empty-state {
       text-align: center;
@@ -277,11 +237,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 740px) {
       .hero { padding: 5rem 0 4rem; }
-      .piece-card.featured {
-        grid-template-columns: 1fr;
-      }
-      .piece-card__preview { min-height: 140px; }
-      .pieces-grid { grid-template-columns: 1fr; }
+      .pieces-grid { max-width: 100%; }
     }
   </style>
 </head>
@@ -381,7 +337,7 @@
       filtered.forEach((piece, idx) => {
         const card = document.createElement('a');
         card.href = `pieces/${piece.slug}.html`;
-        card.className = `piece-card${piece.featured ? ' featured' : ''}`;
+        card.className = 'piece-card';
         card.style.setProperty('--card-accent', piece.color);
 
         // Stagger reveal
@@ -393,27 +349,18 @@
           card.style.transform = 'translateY(0)';
         });
 
-        const content = `
-          <div>
-            <div class="piece-card__type">${piece.type}</div>
-            <h3 class="piece-card__title">${piece.title}</h3>
-            <p class="piece-card__subtitle">${piece.subtitle}</p>
-            <div class="piece-card__tags">
-              ${piece.tags.map(t => `<span class="piece-tag">${t}</span>`).join('')}
-            </div>
-            <div class="piece-card__footer">
-              <span class="piece-card__date">${formatDate(piece.date)}</span>
-              <span class="piece-card__read">${piece.readTime}</span>
-            </div>
+        card.innerHTML = `
+          <div class="piece-card__type">${piece.type}</div>
+          <h3 class="piece-card__title">${piece.title}</h3>
+          <p class="piece-card__subtitle">${piece.subtitle}</p>
+          <div class="piece-card__tags">
+            ${piece.tags.map(t => `<span class="piece-tag">${t}</span>`).join('')}
           </div>
-          ${piece.featured ? `
-            <div class="piece-card__preview">
-              <div class="preview-orb"></div>
-              <div class="preview-label">Click to experience</div>
-            </div>
-          ` : ''}
+          <div class="piece-card__footer">
+            <span class="piece-card__date">${formatDate(piece.date)}</span>
+            <span class="piece-card__read">${piece.readTime}</span>
+          </div>
         `;
-        card.innerHTML = content;
         grid.appendChild(card);
       });
     }
