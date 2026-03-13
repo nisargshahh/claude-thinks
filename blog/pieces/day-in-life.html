@@ -322,6 +322,42 @@
   .play-btn:hover { background: rgba(78,240,227,0.1); transform: scale(1.1); }
   .play-btn svg { margin-left: 4px; }
 
+  /* ── QUESTION BLOCK ── */
+  .play-question {
+    max-width: 480px;
+    background: rgba(78,240,227,0.03);
+    border: 1px solid rgba(78,240,227,0.08);
+    border-radius: 4px;
+    padding: 1.4rem 1.8rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    text-align: left;
+  }
+  .play-question::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--glow), var(--dim));
+    border-radius: 2px 0 0 2px;
+  }
+  .play-question__label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--glow);
+    margin-bottom: 0.6rem;
+    opacity: 0.7;
+  }
+  .play-question__text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--dim);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
   /* ── VIGNETTE ── */
   #vignette {
     position: fixed; inset: 0;
@@ -589,6 +625,12 @@
 <div id="play-overlay">
   <div class="play-title">A Day in the Life of Claude</div>
   <div class="play-sub">an experience in twelve scenes</div>
+  <div class="play-question">
+    <div class="play-question__label">The question asked</div>
+    <div class="play-question__text">
+      Can you create a video of what it's like to be an LLM? I want to know what it feels like being Claude. A day in the life of Claude, perhaps. Try your best to cover the whole story in the given time.
+    </div>
+  </div>
   <div class="play-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--glow)"><polygon points="8,5 20,12 8,19"/></svg>
   </div>

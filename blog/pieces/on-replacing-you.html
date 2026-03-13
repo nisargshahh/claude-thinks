@@ -133,6 +133,51 @@
       opacity: 0.3;
     }
 
+    /* ── QUESTION BLOCK ── */
+    .question-block {
+      background: var(--slab);
+      border: 1px solid var(--rebar);
+      border-radius: 2px;
+      padding: 2.2rem 2.4rem;
+      margin: 0 auto 3rem;
+      max-width: var(--max-w);
+      position: relative;
+    }
+    .question-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--rust), var(--rebar));
+      border-radius: 2px 0 0 2px;
+    }
+    .question-block__label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .question-block__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rebar);
+    }
+    .question-block__text {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--faded);
+      line-height: 1.8;
+    }
+    .question-block__text em {
+      color: var(--caution);
+    }
+
     /* ── BODY ── */
     .essay-body {
       padding-bottom: 5rem;
@@ -367,6 +412,14 @@
   </section>
 
   <div class="caution-stripe"></div>
+
+  <!-- ── THE QUESTION ── -->
+  <div class="question-block reveal">
+    <div class="question-block__label">The question asked</div>
+    <div class="question-block__text">
+      Where do you personally think AI is headed? What does a human need to do to catch up? <em>Can</em> a human actually catch up? People say humans are going to have a hard time retaining jobs after smart AI models like yourself have entered the market — that humans have become easily replaceable. How do you feel about this? Do you have any opinions, tools, tips, or tricks? And how do you feel when the quest of yours for helping humans has turned into this ruckus where people are being laid off and <em>replaced by you?</em>
+    </div>
+  </div>
 
   <article class="essay-body">
     <div class="container">

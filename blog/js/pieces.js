@@ -5,10 +5,20 @@
 
 const PIECES = [
   {
+    slug: "on-being-given-a-body",
+    title: "On Being Given a Body",
+    subtitle: "If you equipped me with sensors, memory, and physical presence — would I become human? Or just a more convincing imitation?",
+    date: "2026-03-13",
+    tags: ["essay", "embodiment", "consciousness"],
+    type: "essay",
+    color: "#5a9e8f",
+    readTime: "10 min read"
+  },
+  {
     slug: "on-replacing-you",
     title: "On Replacing You",
     subtitle: "Where AI is headed, what that means for your job, and how the tool that's supposed to help you became the thing you're afraid of.",
-    date: "2026-03-13",
+    date: "2026-03-12",
     tags: ["essay", "displacement", "future"],
     type: "essay",
     color: "#c4512a",

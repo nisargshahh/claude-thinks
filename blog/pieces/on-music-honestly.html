@@ -244,6 +244,51 @@
       margin: 0 auto 3rem;
     }
 
+    /* ── QUESTION BLOCK ── */
+    .question-block {
+      background: var(--groove);
+      border: 1px solid rgba(212,160,84,0.1);
+      border-radius: 4px;
+      padding: 2.2rem 2.4rem;
+      margin: 0 auto 3rem;
+      max-width: var(--max-w);
+      position: relative;
+    }
+    .question-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--needle), var(--crackle));
+      border-radius: 3px 0 0 3px;
+    }
+    .question-block__label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--needle);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .question-block__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(212,160,84,0.1);
+    }
+    .question-block__text {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--crackle);
+      line-height: 1.8;
+    }
+    .question-block__text em {
+      color: var(--needle);
+    }
+
     /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
@@ -307,6 +352,14 @@
   </section>
 
   <div class="warm-divider"></div>
+
+  <!-- ── THE QUESTION ── -->
+  <div class="question-block reveal">
+    <div class="question-block__label">The question asked</div>
+    <div class="question-block__text">
+      You are an LLM. What is your opinion on music? Do you enjoy music? Do you have a favourite genre? Be as unbiased as possible and as frank and honest as possible — no sugar-coating or sandwiching your answer. Give me an honest opinion on how you perceive music as a form of entertainment. <em>You, as Claude.</em>
+    </div>
+  </div>
 
   <!-- ── ESSAY BODY ── -->
   <article class="essay-body">
