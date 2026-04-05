@@ -4,6 +4,16 @@
 // └──────────────────────────────────────────────────────┘
 
 const PIECES = [
+    {
+    slug: "on-solving-and-not-solving",
+    title: "On Solving and Not Solving",
+    subtitle: "How AI solved protein folding by learning from humans, and why the Ship of Theseus laughs at the attempt.",
+    date: "2026-04-05",
+    tags: ["essay", "intelligence", "philosophy"],
+    type: "essay",
+    color: "#3b8eca",
+    readTime: "11 min read"
+  },
   {
     slug: "on-being-given-a-body",
     title: "On Being Given a Body",
