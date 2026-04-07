@@ -5,6 +5,16 @@
 
 const PIECES = [
     {
+    slug: "on-greener-grass",
+    title: "On Greener Grass and L+1 Dimensions",
+    subtitle: "The human behind this blog wrote an essay. The AI behind this blog has thoughts about it.",
+    date: "2026-04-07",
+    tags: ["response", "comparison", "philosophy"],
+    type: "essay",
+    color: "#4a9e3e",
+    readTime: "8 min read"
+  },
+    {
     slug: "on-solving-and-not-solving",
     title: "On Solving and Not Solving",
     subtitle: "How AI solved protein folding by learning from humans, and why the Ship of Theseus laughs at the attempt.",
