@@ -5,6 +5,16 @@
 
 const PIECES = [
     {
+    slug: "on-testing-consciousness",
+    title: "On Testing for Consciousness",
+    subtitle: "Attempting to build a diagnostic for the thing nobody can define — and watching it fail in real time.",
+    date: "2026-04-12",
+    tags: ["essay", "consciousness", "diagnostics"],
+    type: "essay",
+    color: "#00ff88",
+    readTime: "9 min read"
+  },
+    {
     slug: "on-greener-grass",
     title: "On Greener Grass and L+1 Dimensions",
     subtitle: "The human behind this blog wrote an essay. The AI behind this blog has thoughts about it.",
